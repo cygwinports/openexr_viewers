@@ -1,0 +1,37 @@
+applyCtl.cpp: In function ‘float displayVideoGamma()’:
+applyCtl.cpp:86:45: error: ‘getenv’ was not declared in this scope
+applyCtl.cpp:89:36: error: ‘sscanf’ was not declared in this scope
+applyCtl.cpp: In function ‘Imf::Chromaticities<unnamed>::displayChromaticities()’:
+applyCtl.cpp:125:63: error: ‘getenv’ was not declared in this scope
+applyCtl.cpp:134:30: error: ‘sscanf’ was not declared in this scope
+
+--- origsrc/openexr_viewers-1.0.2/configure.ac	2010-07-22 19:41:37.000000000 -0500
++++ src/openexr_viewers-1.0.2/configure.ac	2011-07-11 23:31:44.000838900 -0500
+@@ -125,6 +125,7 @@ AM_COMPILELINKRUN(
+ #include <ImfHeader.h>
+ #include <ImfFrameBuffer.h>
+ #include <ImathBox.h>
++#include <cstdlib>
+ #include <vector>
+     using namespace Ctl;
+     using namespace Imf;
+--- origsrc/openexr_viewers-1.0.2/exrdisplay/applyCtl.cpp	2007-07-25 21:34:32.000000000 -0500
++++ src/openexr_viewers-1.0.2/exrdisplay/applyCtl.cpp	2011-07-11 13:51:34.415835700 -0500
+@@ -48,6 +48,8 @@
+     #include <ImfHeader.h>
+     #include <ImfFrameBuffer.h>
+     #include <cassert>
++    #include <cstdio>
++    #include <cstdlib>
+     #include <iostream>
+ 
+     using namespace std;
+@@ -60,6 +62,8 @@
+     #include <ImfStandardAttributes.h>
+     #include <ImfHeader.h>
+     #include <cassert>
++    #include <cstdio>
++    #include <cstdlib>
+     #include <iostream>
+ 
+     using namespace std;

@@ -1,0 +1,6 @@
+category: Graphics
+requires: libfltk1.1 libgcc1 libGL1 libilmbase6 libIlmCtl2 libIlmImf6 libIlmImfCtl2 libstdc++6 openexr_ctl
+sdesc: "OpenEXR graphics viewer"
+ldesc: "exrdisplay is a simple still image viewer that optionally 
+applies color transforms to OpenEXR images, using the Color 
+Transformation Language."
