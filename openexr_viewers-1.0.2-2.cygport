@@ -1,6 +1,6 @@
 DESCRIPTION="OpenEXR image viewer"
 HOMEPAGE="http://www.openexr.com/"
-SRC_URI="http://savannah.nongnu.org/download/openexr/${P}.tar.gz"
+SRC_URI="mirror://savannah/openexr/${P}.tar.gz"
 SRC_DIR="${P%[a-z]}"
 
 PATCH_URI="1.0.2-gcc45.patch"
