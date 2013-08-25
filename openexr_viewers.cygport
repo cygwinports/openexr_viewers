@@ -1,0 +1,21 @@
+NAME="openexr_viewers"
+VERSION=1.0.2
+RELEASE=3
+CATEGORY="Graphics"
+SUMMARY="OpenEXR graphics viewer"
+DESCRIPTION="exrdisplay is a simple still image viewer that optionally applies
+color transforms to OpenEXR images, using the Color Transformation Language."
+HOMEPAGE="http://www.openexr.com/"
+SRC_URI="https://github.com/downloads/openexr/openexr/${NAME}-${VERSION}.tar.gz"
+
+DIFF_EXCLUDES="OpenEXR_ViewersConfig.h"
+
+NO_AUTOHEADER=1
+
+src_install() {
+	cd ${B}
+	cyginstall docdir=/usr/share/doc/${NAME}
+	make_desktop_entry "exrdisplay %f" "OpenEXR Viewer" "" "Graphics;Viewer" "" "NoDisplay=true" "MimeType=image/x-exr;"
+	# no reason to ship headers
+	rm -fr ${D}/usr/include/
+}
